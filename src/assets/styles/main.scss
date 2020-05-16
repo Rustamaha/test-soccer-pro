@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('~@/assets/fonts/Ubuntu-Bold.ttf') format('ttf'),
+       url('~@/assets/fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('~@/assets/fonts/Ubuntu-BoldItalic.ttf') format('ttf'),
+       url('~@/assets/fonts/Ubuntu-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('~@/assets/fonts/Ubuntu-Italic.ttf') format('ttf'),
+       url('~@/assets/fonts/Ubuntu-Italic.woff') format('woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('~@/assets/fonts/Ubuntu-Light.ttf') format('ttf'),
+       url('~@/assets/fonts/Ubuntu-Light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('~@/assets/fonts/Ubuntu-Regular.ttf') format('ttf'),
+       url('~@/assets/fonts/Ubuntu-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.container-custom {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  color: $white;
+  font-size: 33px;
+  line-height: 33px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+
+h3 {
+  font-size: 23px;
+  line-height: 25px;
+  margin: 0;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 767px) {
+  h3 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}

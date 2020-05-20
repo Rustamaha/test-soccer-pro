@@ -21,6 +21,9 @@
                 div.header__subcategory(v-for='subcateg in category.slice(1)')
                   template(v-for='link in subcateg')
                     router-link.header__sublink(to='#') {{ link }}
+        div.header__box-cart
+          ShoppingCart
+        div.header__search
 
 </template>
 
@@ -32,6 +35,7 @@ import {
 
 import logo from '@/assets/static/images/logo.png';
 import MobileSettings from '@/components/MobileSettings.vue';
+import ShoppingCart from '@/components/ShoppingCart.vue';
 
 const categories = [
   'shoes',
@@ -67,6 +71,7 @@ export default {
   name: 'HeaderContainer',
   components: {
     MobileSettings,
+    ShoppingCart,
   },
   data() {
     return {
@@ -210,7 +215,7 @@ export default {
     &__subcategories {
       position: absolute;
       left: 100%;
-      top: 54%;
+      top: 25%;
       //opacity: 1;
       visibility: visible;
       width: 455px;
@@ -251,6 +256,15 @@ export default {
         color: $white;
       }
     }
+
+    &__box-cart {
+      margin-top: 10px;
+      position: relative;
+      background-color: $blueColor;
+      padding: 23px 28px;
+      color: $white;
+    }
+
     .header-enter-active,
     .header-leave-active {
       -moz-transition: 0.5s all ease;

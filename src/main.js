@@ -23,6 +23,7 @@ import {
   faCertificate,
   faCog,
   faCaretDown,
+  faCaretUp,
   faChevronDown,
   faChevronUp,
   faChevronRight,
@@ -62,6 +63,7 @@ library.add(
   faChevronRight,
   faChevronLeft,
   faRandom,
+  faCaretUp,
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

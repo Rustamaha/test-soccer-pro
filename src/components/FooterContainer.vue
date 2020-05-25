@@ -1,17 +1,15 @@
 <template lang="pug">
   div.footer-container
-    div.footer-container__copyright
-      |Powered by OpenCart
-      br
-      |Soccer Pro © 2020
+    FooterCopyright
 </template>
 
 <script>
+import FooterCopyright from '@/components/FooterCopyright.vue';
 
 export default {
   name: 'FooterContainer',
   components: {
-
+    FooterCopyright,
   },
 };
 </script>

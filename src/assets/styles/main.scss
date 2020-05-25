@@ -70,6 +70,12 @@ h3 {
   font-weight: 300;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 @media only screen and (min-width: 767px) {
   h3 {
     font-size: 45px;

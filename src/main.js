@@ -29,7 +29,15 @@ import {
   faChevronRight,
   faChevronLeft,
   faRandom,
+  faSearch,
+  faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  faFacebookF,
+  faTwitter,
+  faGooglePlusG,
+} from '@fortawesome/free-brands-svg-icons';
 
 import App from './App.vue';
 import './registerServiceWorker';
@@ -64,6 +72,11 @@ library.add(
   faChevronLeft,
   faRandom,
   faCaretUp,
+  faSearch,
+  faPhoneAlt,
+  faFacebookF,
+  faTwitter,
+  faGooglePlusG,
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

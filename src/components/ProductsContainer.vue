@@ -36,8 +36,10 @@ export default {
   }
 
   &__row {
-    //margin-left: -15px;
-    //margin-right: -15px;
   }
+}
+
+@media only screen and (min-width: 768px) {
+
 }
 </style>

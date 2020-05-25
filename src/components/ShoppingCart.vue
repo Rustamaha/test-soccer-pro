@@ -8,7 +8,7 @@
         |0 items
         span.shopping-cart__arrow
           font-awesome-icon.shopping-cart__icon.shopping-cart__icon_arrow(:icon='faCaret')
-    div.shopping-cart__list(v-if='isOpened  ')
+    div.shopping-cart__list(v-if='isOpened')
       | Your shopping cart is empty!
 </template>
 

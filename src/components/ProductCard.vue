@@ -201,4 +201,27 @@ export default {
     float: left;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .product-card {
+    width: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+
+    &__btn-add {
+      font-size: 11px;
+      line-height: 11px;
+    }
+
+    &__icon {
+      font-size: 1.3rem;
+      line-height: 1em;
+    }
+  }
+}
 </style>

@@ -19,3 +19,5 @@ npm run build
 ```
 npm run lint
 ```
+build on netlify.com
+https://competent-boyd-601146.netlify.app/

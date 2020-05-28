@@ -1,54 +1,52 @@
 <template lang="pug">
-  div.header
+  div.header(:class="{ 'header_open': isOpened }")
     div.header__icon.header__icon_header-icon(@click='open'
       :class="{ 'header__icon_header-icon_open': isOpened }")
       font-awesome-icon(:icon='faChevron')
-    transition(name='header')
-      div.header__list(v-if='isOpened')
-        MobileSettings.header__settings-position
-        div.header__logo
-          router-link(to='/')
-            img(:src='logo' alt='logo')
-        div.header__box-category
-          template(v-for='category in categories')
-            router-link.header__link(v-if='typeof category === "string"' to='#')
-              |{{ category }}
-            div.header__link(v-else='typeof category === "array"'
-              @click='openSubcategory')
-              |{{ category[0] }}
-              font-awesome-icon.header__icon.header__icon_category-icon(:icon='faChevronRight')
-              div.header__subcategories(v-if='openSubcat')
-                div.header__subcategory(v-for='subcateg in category.slice(1)')
-                  template(v-for='link in subcateg')
-                    router-link.header__link.header__link_sublink(to='#') {{ link }}
-        div.header__box-cart
-          ShoppingCart
-        div.header__search
-          input.header__input-search(type='text' name='search' v-model='search')
-          button.header__button-search
-            font-awesome-icon(:icon='faSearch')
-        div.header__top-links
-          template(v-for='link in topLinks')
-            router-link.header__link.header__link_top-link(to='#')
-              font-awesome-icon.header__icon(:icon='link.icon')
-              span
-                |{{ link.text }}
-        div.header__address
-          a
-            font-awesome-icon.header__icon.header__icon_phone-icon(:icon='faPhoneAlt')
-            span 800-2345-6789
-        div.header__social-list
-          ul
-            li(v-for='link in socialList')
-              router-link.header__link.header__link_social-link(to='#')
-                font-awesome-icon(:icon='link')
-        div.header__links
-          ul
-            li(v-for='link in links')
-              router-link.header__link.header__link_nav-link(to='#')
-                |{{ link }}
-        FooterCopyright.header__copyright-position
-
+    div.header__list
+      MobileSettings.header__settings-position
+      div.header__logo
+        router-link(to='/')
+          img(:src='logo' alt='logo')
+      div.header__box-category
+        template(v-for='category in categories')
+          router-link.header__link(v-if='typeof category === "string"' to='#')
+            |{{ category }}
+          div.header__link(v-else='typeof category === "array"'
+            @click='openSubcategory')
+            |{{ category[0] }}
+            font-awesome-icon.header__icon.header__icon_category-icon(:icon='faChevronRight')
+            div.header__subcategories(v-if='openSubcat')
+              div.header__subcategory(v-for='subcateg in category.slice(1)')
+                template(v-for='link in subcateg')
+                  router-link.header__link.header__link_sublink(to='#') {{ link }}
+      div.header__box-cart
+        ShoppingCart
+      div.header__search
+        input.header__input-search(type='text' name='search' v-model='search')
+        button.header__button-search
+          font-awesome-icon(:icon='faSearch')
+      div.header__top-links
+        template(v-for='link in topLinks')
+          router-link.header__link.header__link_top-link(to='#')
+            font-awesome-icon.header__icon(:icon='link.icon')
+            span
+              |{{ link.text }}
+      div.header__address
+        a
+          font-awesome-icon.header__icon.header__icon_phone-icon(:icon='faPhoneAlt')
+          span 800-2345-6789
+      div.header__social-list
+        ul
+          li(v-for='link in socialList')
+            router-link.header__link.header__link_social-link(to='#')
+              font-awesome-icon(:icon='link')
+      div.header__links
+        ul
+          li(v-for='link in links')
+            router-link.header__link.header__link_nav-link(to='#')
+              |{{ link }}
+      FooterCopyright.header__copyright-position
 </template>
 
 <script>
@@ -175,6 +173,7 @@ export default {
     close(e) {
       if (!this.$el.contains(e.target)) {
         this.isOpened = false;
+        this.openSubcat = false;
       }
     },
     open() {
@@ -231,10 +230,18 @@ export default {
     width: 300px;
     height: 100%;
     z-index: 10000;
-    left: 0;
+    left: -300px;
     top: 0;
     bottom: 0;
     box-shadow: 6px 0 12px rgba(0, 0, 0, 0.1);
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+
+    &_open {
+      left: 0;
+    }
 
     &__icon {
       font-size: 1.6875rem;
@@ -284,12 +291,8 @@ export default {
     }
 
     &__list {
-      display: inline-block;
-      //width: 300px;
-      //height: 100%;
+      display: block;
       background: $white;
-      left: 0;
-      box-shadow: 6px 0 12px rgba(0, 0, 0, 0.1);
     }
 
     &__settings-position {
@@ -418,7 +421,6 @@ export default {
       position: absolute;
       left: 100%;
       top: 25%;
-      //opacity: 1;
       visibility: visible;
       width: 455px;
       padding: 10px 0 10px 10px;
@@ -465,7 +467,6 @@ export default {
       line-height: 24px;
       width: 100%;
       height: 50px;
-      //padding: 14px 50px 14px 20px;
       background: $whiteColor;
       border: 1px solid $gray85;
     }
@@ -503,7 +504,6 @@ export default {
       font-weight: 500;
       position: relative;
       margin-left: 28px;
-      //color: $blueColor;
       color: $darkBlue;
     }
 
@@ -532,19 +532,6 @@ export default {
       position: relative;
       bottom: 0;
     }
-
-    .header-enter-active,
-    .header-leave-active {
-      -moz-transition: 0.5s all ease;
-      -o-transition: 0.5s all ease;
-      -webkit-transition: 0.5s all ease;
-      transition: 0.5s all ease;
-  }
-
-  .header-enter,
-  .header-leave-to {
-    left: -300px;
-  }
   }
 }
 

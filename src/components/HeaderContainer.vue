@@ -233,7 +233,6 @@ export default {
     left: -300px;
     top: 0;
     bottom: 0;
-    box-shadow: 6px 0 12px rgba(0, 0, 0, 0.1);
     -moz-transition: 0.5s all ease;
     -o-transition: 0.5s all ease;
     -webkit-transition: 0.5s all ease;
@@ -241,6 +240,11 @@ export default {
 
     &_open {
       left: 0;
+      box-shadow: 6px 0 12px rgba(0, 0, 0, 0.1);
+      -moz-transition: 0.5s all ease;
+      -o-transition: 0.5s all ease;
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
     }
 
     &__icon {

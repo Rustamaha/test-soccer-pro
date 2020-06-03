@@ -65,8 +65,6 @@ export default {
 <style scoped lang="scss">
 .product-card {
   width: 100%;
-  float: none;
-
   position: relative;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -198,7 +196,6 @@ export default {
 @media only screen and (min-width: 540px) {
   .product-card {
     width: 50%;
-    float: left;
   }
 }
 
@@ -207,6 +204,7 @@ export default {
     width: 25%;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 30px;
 
     &__img {
       width: 100%;

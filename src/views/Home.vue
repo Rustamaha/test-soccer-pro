@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.home
     CarouselContainer
     BannersContainer
     ProductsContainer
@@ -11,7 +11,7 @@ import CarouselContainer from '@/components/CarouselContainer.vue';
 import BannersContainer from '@/components/BannersContainer.vue';
 import ProductsContainer from '@/components/ProductsContainer.vue';
 
-import FooterContainer from '@/components/FooterContainer.vue';
+import FooterContainer from '@/components/footer/FooterContainer.vue';
 
 export default {
   name: 'Home',
@@ -24,5 +24,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-
+.home {
+  position: static;
+}
 </style>

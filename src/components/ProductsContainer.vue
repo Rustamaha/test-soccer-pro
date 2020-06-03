@@ -36,6 +36,9 @@ export default {
   }
 
   &__row {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
   }
 }
 

@@ -8,7 +8,7 @@
 <script>
 import TopRow from '@/components/TopRow.vue';
 import CategoriesMenu from '@/components/CategoriesMenu.vue';
-import HeaderContainer from '@/components/HeaderContainer.vue';
+import HeaderContainer from '@/components/header/HeaderContainer.vue';
 
 export default {
   components: {

@@ -50,7 +50,9 @@ body {
 
 .container-custom {
   display: block;
+  position: absolute;
   width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -68,6 +70,15 @@ h3 {
   line-height: 25px;
   margin: 0;
   font-weight: 300;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  color: $darkBlue;
 }
 
 ul {
